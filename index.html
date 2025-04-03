@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>レインボーフレーバー32 サークルMAP</title>
+  <!-- Googleフォント「Kaisei Decol」 -->
+  <link href="https://fonts.googleapis.com/css2?family=Kaisei+Decol&display=swap" rel="stylesheet">
+  <!-- 外部CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>💖✨ レインボーフレーバー32 サークルMAP ✨💖</h1>
+  </header>
+  <div class="container">
+    <!-- PDF表示エリア（PDF.jsでcanvasにレンダリング） -->
+    <div id="pdf-container" class="pdf-container">
+      <canvas id="pdf-canvas"></canvas>
+      <!-- キャンバス内のズームボタン（左上縦並び） -->
+      <div id="pdf-controls" class="pdf-controls">
+        <button id="zoomIn" class="zoom-button">＋</button>
+        <button id="zoomOut" class="zoom-button">－</button>
+      </div>
+      <!-- 拡大表示モード解除用のクローズボタン（右上） -->
+      <span id="closeExpanded" class="close" onclick="toggleExpanded()">&times;</span>
+    </div>
+    <!-- ボタン群：全画面表示とPDFダウンロード（中央揃え） -->
+    <div class="button-group">
+      <button id="toggleExpanded" class="action-button" onclick="toggleExpanded()">全画面表示</button>
+      <a class="action-button download-link" href="RF32_Map.pdf" download>PDFをダウンロード</a>
+    </div>
+  </div>
+  <footer id="pageFooter">
+    <section id="contact">
+      <h2>お問い合わせ</h2>
+      <p>
+        <a href="https://x.com/shota_" target="_blank">X: @shota_</a>
+        <a href="mailto:showtime@precure.tv">showtime@precure.tv</a>
+      </p>
+    </section>
+    <div id="copyright">
+      <p>© 2011 - <span id="year"></span> Shota (SHOWTIME). All rights reserved for original works.</p>
+      <p>サークル「SHOWTIME」代表・祥太が個人で運営しています。ABCアニメーション様、東映アニメーション様、その他各社様とは一切関係ございません。</p>
+      <p>パロディ対象となる各作品の権利は原作者様に帰属します。</p>
+    </div>
+  </footer>
+  
+  <!-- PDF.js と Hammer.js をCDN経由で読み込み -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+  <!-- 外部スクリプト -->
+  <script src="js/script.js"></script>
+</body>
+</html>
